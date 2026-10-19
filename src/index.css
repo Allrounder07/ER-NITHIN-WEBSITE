@@ -1,0 +1,196 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Light / Dark Mode Color Themes */
+:root {
+  --bg-primary: #020617;
+  --bg-secondary: #0f172a;
+  --bg-card: rgba(15, 23, 42, 0.8);
+  --border-card: rgba(56, 189, 248, 0.2);
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+}
+
+html.light {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --bg-card: #ffffff;
+  --border-card: rgba(203, 213, 225, 0.9);
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  color-scheme: light;
+}
+
+html.dark {
+  --bg-primary: #020617;
+  --bg-secondary: #0f172a;
+  --bg-card: rgba(15, 23, 42, 0.8);
+  --border-card: rgba(56, 189, 248, 0.2);
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  color-scheme: dark;
+}
+
+/* Light mode specific high-contrast enhancements */
+.light body {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+.dark body {
+  background-color: #020617;
+  color: #f8fafc;
+}
+
+/* Light mode overrides for high readability */
+.light .bg-slate-950 {
+  background-color: #f8fafc !important;
+}
+
+.light .bg-slate-900 {
+  background-color: #ffffff !important;
+}
+
+.light .bg-slate-900\/60,
+.light .bg-slate-900\/70,
+.light .bg-slate-900\/80,
+.light .bg-slate-900\/90 {
+  background-color: #f1f5f9 !important;
+}
+
+.light .bg-slate-950\/80,
+.light .bg-slate-950\/90,
+.light .bg-slate-950\/95 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.light .bg-sky-950 {
+  background-color: #e0f2fe !important;
+  color: #0369a1 !important;
+}
+
+.light .bg-sky-950\/80,
+.light .bg-sky-950\/40,
+.light .bg-sky-950\/30 {
+  background-color: #f0f9ff !important;
+}
+
+.light .text-white {
+  color: #0f172a !important;
+}
+
+.light .text-slate-100 {
+  color: #0f172a !important;
+}
+
+.light .text-slate-200 {
+  color: #1e293b !important;
+}
+
+.light .text-slate-300 {
+  color: #334155 !important;
+}
+
+.light .text-slate-400 {
+  color: #475569 !important;
+}
+
+.light .border-slate-800,
+.light .border-slate-800\/80,
+.light .border-sky-900\/40,
+.light .border-sky-900\/50,
+.light .border-sky-950 {
+  border-color: #e2e8f0 !important;
+}
+
+.light .border-sky-500\/30,
+.light .border-sky-500\/40,
+.light .border-sky-600\/40,
+.light .border-sky-700\/50 {
+  border-color: #38bdf8 !important;
+}
+
+.light .shadow-2xl {
+  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Terminal keeps dark coding aesthetic even in light mode for readability */
+.light .terminal-window,
+.light .terminal-window * {
+  color-scheme: dark;
+}
+.light .terminal-window {
+  background-color: #020617 !important;
+}
+.light .terminal-window .text-white {
+  color: #ffffff !important;
+}
+.light .terminal-window .text-slate-200 {
+  color: #e2e8f0 !important;
+}
+.light .terminal-window .text-slate-400 {
+  color: #94a3b8 !important;
+}
+
+/* Custom glow and accents matching ER Nithin branding */
+.glow-electric {
+  box-shadow: 0 0 30px -5px rgba(14, 165, 233, 0.35);
+}
+
+.glow-yellow {
+  box-shadow: 0 0 30px -5px rgba(234, 179, 8, 0.3);
+}
+
+.bg-radial-hero {
+  background: radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.15) 0%, rgba(15, 23, 42, 0.8) 50%, rgba(2, 6, 23, 1) 100%);
+}
+
+.light .bg-radial-hero {
+  background: radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.1) 0%, rgba(241, 245, 249, 0.8) 50%, rgba(248, 250, 252, 1) 100%);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+.light ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+
+.light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0284c7;
+}
